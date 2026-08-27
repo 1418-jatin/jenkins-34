@@ -50,6 +50,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
+	            mkdir -p /var/www/lab
                     cp build/index.html ${DEPLOY_DIR}/index.html
                     ls -l ${DEPLOY_DIR}
                 '''
@@ -91,3 +92,4 @@ pipeline {
         }
     }
 }
+
